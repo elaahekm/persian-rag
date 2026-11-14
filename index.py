@@ -1,15 +1,11 @@
 import os
+from chunk import chunk_text
 
 import chromadb
 import ollama
-from chunk import chunk_text
 
 client = chromadb.PersistentClient(path="db")
-try:
-    client.delete_collection("persian")
-except Exception:
-    pass
-collection = client.create_collection("persian")
+collection = client.get_or_create_collection("persian")
 
 for filename in sorted(os.listdir("data")):
     with open(f"data/{filename}", encoding="utf-8") as f:
