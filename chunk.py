@@ -1,7 +1,7 @@
 import os
 
 
-def chunk_text(text, size=500, overlap=100):
+def chunk_text(text, size=300, overlap=60):
     chunks = []
     start = 0
     while start < len(text):

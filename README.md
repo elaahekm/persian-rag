@@ -5,7 +5,7 @@ A local Persian RAG (retrieval-augmented generation) system. Ask a question in P
 ## How it works
 
 1. `download.py` downloads 5 Persian Wikipedia articles into `data/`
-2. `chunk.py` splits the texts into 500-character chunks with 100 overlap
+2. `chunk.py` splits the texts into 300-character chunks with 60 overlap
 3. `index.py` embeds the chunks with `bge-m3` and stores them in ChromaDB
 4. `ask.py` retrieves the 4 closest chunks and answers with `llama3.2:3b`
 5. `eval.py` runs 5 test questions and checks for an expected keyword
