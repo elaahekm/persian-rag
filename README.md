@@ -36,6 +36,26 @@ Known weaknesses:
 - **4 retrieved chunks:** with 3, the right chunk was often missing. With 6, the small 3B model got confused and said "not found". 4 worked best in my tests.
 - **bge-m3:** a multilingual embedding model that handles Persian well.
 
+## API
+
+```
+uvicorn api:app --port 8000
+curl -X POST http://127.0.0.1:8000/ask -H "Content-Type: application/json" -d '{"question": "حافظ در کدام شهر زندگی کرد؟"}'
+```
+
+Endpoints: `GET /health` and `POST /ask`.
+
+## Docker
+
+Run `python index.py` once first (the `db/` folder is not in git). Ollama must be running on the host.
+
+```
+docker build -t persian-rag .
+docker run --rm -p 8000:8000 persian-rag
+```
+
+The container reaches Ollama on the host through `host.docker.internal`.
+
 ## Next
 
-Unit tests, ruff, GitHub Actions, FastAPI, Docker.
+Better retrieval (the Isfahan question), a stricter evaluation than keyword matching, and more texts.
