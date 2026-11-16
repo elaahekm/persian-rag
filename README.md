@@ -24,7 +24,7 @@ python eval.py
 
 ## Evaluation
 
-Current score: 4/5 on a small keyword-based test set.
+Current score: 8/10 on a small keyword-based test set.
 
 Known weaknesses:
 - The Isfahan nickname question fails because retrieval misses the right chunk.
