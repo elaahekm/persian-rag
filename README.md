@@ -27,7 +27,8 @@ python eval.py
 Current score: 8/10 on a small keyword-based test set.
 
 Known weaknesses:
-- The Isfahan nickname question fails because retrieval misses the right chunk.
+- The Isfahan nickname question fails because
+- The question "When did Ferdowsi die?" fails because the answer is not found in the retrieved chunks. retrieval misses the right chunk.
 - Keyword matching is lenient: an answer can contain the right word and still be partly wrong.
 
 ## Decisions
